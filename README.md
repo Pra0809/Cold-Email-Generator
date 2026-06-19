@@ -93,15 +93,15 @@ Free Groq API keys are available at [console.groq.com](https://console.groq.com)
 
 Things this project doesn't handle that a production version would:
 
-.Placeholder portfolio data. The portfolio CSV uses generic example.com links. A real deployment would replace this with an actual portfolio of past projects.
+*Placeholder portfolio data. The portfolio CSV uses generic example.com links. A real deployment would replace this with an actual portfolio of past projects.
 
-.No retrieval evaluation. Portfolio-to-job matching trusts ChromaDB's default similarity without measuring retrieval quality on a labelled set.
+*No retrieval evaluation. Portfolio-to-job matching trusts ChromaDB's default similarity without measuring retrieval quality on a labelled set.
 
-.Weak handling of LLM output gaps. When the LLM returns null or empty values for fields like skills (typical on non-technical job postings), downstream code can break or produce malformed emails.
+*Weak handling of LLM output gaps. When the LLM returns null or empty values for fields like skills (typical on non-technical job postings), downstream code can break or produce malformed emails.
 
-.Single-model setup. Both extraction and email generation use the same 70B model. Splitting extraction onto a cheaper, smaller model would be cheaper and faster per request.
+*Single-model setup. Both extraction and email generation use the same 70B model. Splitting extraction onto a cheaper, smaller model would be cheaper and faster per request.
 
-.Tight coupling to LangChain. Prompt orchestration flows through LangChain's plumbing rather than driving the model directly, which adds dependency surface area.
+*Tight coupling to LangChain. Prompt orchestration flows through LangChain's plumbing rather than driving the model directly, which adds dependency surface area.
 
 ## Stack and references
 
