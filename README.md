@@ -69,7 +69,8 @@ cd Cold-Email-Generator
 pip install -r Requirement.txt
 
 # 2. Set your Groq API key
-echo "GROQ_API_KEY=your_key_here" > .env
+cp .env.example .env
+# Then open .env and replace `your_groq_api_key_here` with your actual key
 
 # 3. Run
 streamlit run main.py
@@ -87,6 +88,8 @@ Free Groq API keys are available at [console.groq.com](https://console.groq.com)
 | `utils.py` | Text cleaning (HTML / URL / special-char stripping) |
 | `resources/my_portfolio_database.csv` | Generic placeholder portfolio (tech stacks → URLs) |
 | `Requirement.txt` | Python dependencies |
+| `.env.example` | Template for environment variables (copy to `.env`, fill in your Groq key) |
+| `.gitignore` | Excludes `.env`, Python cache, and generated ChromaDB artifacts |
 
 ## Limitations and what I'd do differently now
 
